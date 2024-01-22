@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            margin:0;
+            background-color:white;
+        }
+        #clock {
+            color:aqua;
+            width:200px;
+            height:200px;
+            border:2px solid aquamarine;
+            border-radius:50%;
+        }
+        .hand {
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform-origin:50% 100%;
+            background-color:aquamarine;
+            transform-style:preserve-3d;
+        }
+        .dot {
+            position:absolute;
+            top:50%;
+            left:50%;
+            width:8px;
+            height:8px;
+            background-color:aquamarine;
+            border-radius:50%;
+            transform:translate(-50%,-50%);
+        }
+        #hourHand {
+            width:6px;
+            height:50px;
+            animation:rotateHour 12s;
+        }
+        #minuteHand {
+            width:4px;
+            height:70px;
+            animation:rotateMinute 60s;
+        }
+
+        @keyframes rotateHour {
+            from{
+                transform:translate(-50%,-100%)rotate(0deg);
+            }
+            to{
+                transform:translate(-50%,-100%)rotate(360deg);
+            }
+        }
+
+        @keyframes rotateMinute {
+            from{
+                transform:translate(-50%, -100%)rotate(0deg);
+            }
+            to{
+                transform:translate(-50%, -100%)rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">
+        <div class="dot"></div>
+        <div id="hourHand" class="hand"></div>
+        <div id="minuteHand" class="hand"></div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
